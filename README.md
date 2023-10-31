@@ -48,4 +48,7 @@ pentingnya bekerja bada suatu branch yang berbeda agar meminimalisir terjadi con
 
 <img src="img/merger.png" alt="image" width=50%/>
 
+### Pull repository untuk update terbaru
+
+
 
