@@ -8,9 +8,6 @@
 
 ### Clone repository :
 - git clone (ssh atau https dari repo yg mau di clone) <br>
-<<<<<<< Updated upstream
-*git clone git@github.com:sultansyahputray/Github-tutorial.git*
-=======
 *git clone git@github.com:sultansyahputray/Github-tutorial.git*
 
 ### Pembuatan branch :
@@ -35,4 +32,3 @@ pentingnya bekerja bada suatu branch yang berbeda agar meminimalisir terjadi con
 *git commit -m "update Readme"
 - git push origin (nama branch)
 *git push origin branch*
->>>>>>> Stashed changes
