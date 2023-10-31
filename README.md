@@ -47,5 +47,3 @@ pentingnya bekerja bada suatu branch yang berbeda agar meminimalisir terjadi con
 - jika sudah sesuai, lakukan rebase and merge
 
 <img src="img/merger.png" alt="image" width=50%/>
-
-
