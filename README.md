@@ -32,3 +32,8 @@ pentingnya bekerja bada suatu branch yang berbeda agar meminimalisir terjadi con
 *git commit -m "update Readme"
 - git push origin (nama branch)
 *git push origin branch*
+
+<img src="img/upload-branch.png" alt="image" width=50%/>
+
+### Merger branch
+- buka repository yang sedang dikerjakan
