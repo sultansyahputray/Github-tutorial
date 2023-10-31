@@ -32,3 +32,20 @@ pentingnya bekerja bada suatu branch yang berbeda agar meminimalisir terjadi con
 *git commit -m "update Readme"
 - git push origin (nama branch)
 *git push origin branch*
+
+<img src="img/upload-branch.png" alt="image" width=50%/>
+
+### Merger branch
+- buka repository yang sedang dikerjakan
+- click pada menu pull request
+- set agar base dari branch yang akan kita compare adalah main dan peng-comparenya adalah branch kita
+
+<img src="img/pull-request.png" alt="image" width=50%/>
+
+- buat pull request baru
+- pastikan bahwa pesan commit sudah sesuai
+- jika sudah sesuai, lakukan rebase and merge
+
+<img src="img/merger.png" alt="image" width=50%/>
+
+
