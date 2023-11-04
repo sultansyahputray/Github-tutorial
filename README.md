@@ -113,3 +113,28 @@ git clone (alamat ssh file yang dimaksud)
 - **Meng-input perubahan yang sebelumnya telah kita buat ke file clone yang baru**
 - **Buat branch baru, lalu push ke branch tersebut. Cek dengan membuat suatu pull request, lalu perhatikan hal yang berubah antara file pada main dengan branch kita**
 - **Apabila dirasa tidak ada conflict, lanjutkan dengan rebase and merge**
+
+### 2. Menggunakan fasilitas git pull
+kondisi : <br>
+<img src="img/pull-conflict.png" alt="image" width=50%/> 
+
+- **Melakukan pull pada branch yang kita maksudkan untuk melakukan push**
+```bash
+git pull origin (nama branch)
+```
+*`git pull origin sultan`* <br>
+<img src="img/masih-conflict.png" alt="image" width=50%/> 
+
+- **Karena terdapat conflict, selesaikan terlebih dahulu file yang conflict**
+<img src="img/perbaiki-dulu.png" alt="image" width=50%/> 
+
+- **Setelah diperbaiki, lalu complete merge**
+- **Lakukan commit ulang untuk perubahan final**
+- **Coba cek push kembali, apakah masih conflict atau tidak**
+<img src="img/after-fix-commit.png" alt="image" width=50%/> 
+
+- **Kalau sudah tidak terjadi conflict, lanjutkan ke langkah merger**
+
+
+
+
