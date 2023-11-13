@@ -68,7 +68,7 @@ git push origin (nama branch)
 <br>
 
 ## Merger branch
-Merger atau menggabungkan file dari suatu branch ke dalam main membutuhkan perhatian dibeberapa hal, mulai dari apakah data yang mau kita merge sudah data yang terbaru, lalu format pesan commit, dll.
+Merger atau menggabungkan file dari suatu branch ke dalam branch lain membutuhkan perhatian dibeberapa hal, mulai dari apakah data yang mau kita merge sudah data yang terbaru, lalu format pesan commit, dll.
 
 ### Membuat suatu permintaan penggabungan antara branch dengan main (pull request)
 - **Buka repository yang sedang dikerjakan** <br>
@@ -136,6 +136,75 @@ git pull origin (nama branch)
 
 - **Kalau sudah tidak terjadi conflict, lanjutkan ke langkah merger**
 
+<br><br>
 
+## Promp Git Hub yang sewaktu-waktu dibutuhkan
+### 1. Git cherry pick
+cherry pick sendiri merupakan suatu fasilitas dimana kita dapat menerapkan satu atau lebih commit pada suatu branch ke branch yang lain. Hal ini seperti kita ingin meng-copy suatu commit yang pernah kita lakukan ke branch yang saat ini sedang kita kerjakan. Berikut contoh kasus saat kita menggunakan cherry pick :
 
+- **Memilih branch yang akan kita jadikan workspace kita**
+```bash
+git checkout -b uji-coba
+```
 
+- **Semisal kita ingin mengambil commit di branch main, maka kita cek log commit dari branch main tersebut**
+```bash
+git log main
+```
+
+- **Pilih commit mana yang ingin kita ambil datanya, copy id commit yang dipilih**
+```bash
+git cherry-pick ce78c49b2f78e47e46f7954a804911fbe1148bed
+```
+
+- **Jika terjadi conflict, maka selesaikan terlebih dahulu file conflict nya. setelah itu lanjutkan proses cherry-pick nya**
+```bash
+git cherry-pick --continue
+```
+
+- **Seteah selesai, beri commit baru untuk file yang telah di modifikasi, lalu push ke branch yang kita inginkan** 
+<br><br>
+
+### 2. Git Stash
+Fitur ini berguna untuk menyimpan semua progress yang telah kita kerjakan selama ini sejak commit terakhir tanpa membuat sebuah commit untuk state itu sendiri. Jadi mirip seperti checkpoint yang mana kita tidak perlu membuat save-save an ulang setiap kali terdapat sebuah pekerjaan yang baru setengah jalan dan belum mau kita commit terlebih dahulu. Berikut langkah-langkah dalam menggunakan git stash :
+- **Membuat suatu checkpoint atau stash**
+```bash
+git stash
+```
+
+- **Mengecek daftar checkpoint/stash yang telah kita buat**
+```bash
+git stash list
+```
+biasanya setealah itu akan muncul checkpointnya dalam bentuk stash@{i} dimana {i} sesuai dengan checkpoint keberapa yang telah kita lakukan. 
+
+- **Meng-apply checkpoint yang telah kita buat ke pekerjaan kita kembali**
+```bash
+git stash apply
+```
+```bash
+git stash pop
+```
+perbedaan dari apply dan pop sendiri yaitu jika menggunakan apply, maka stash yang baru saja di implementasikan tidak akan dihapus dari daftar checkpoint. sedangkan kalau menggunakan pop, maka stash tersebut akan otomatis terhapuskan dari daftar checkpoint.
+
+<br><br>
+## Format penulisan pesan commit yang baik dan benar
+Berikut contoh penulisan pesan commit yang baik dan benar :
+```bash
+<type>[optional scope] : <description>
+[optional body]
+[optional footer]
+```
+
+```bash
+refactor : match the style coding with google style guide c++
+
+change the style of writing a code with google style guide, so another participant will be easier to understand the code. 
+```
+nah untuk membuat pesan commit yang panjang seperti ini, gunakan perintah `git commit` saja, jadi tidak perlu menyertakan `-m "pesan commit"`. <br><br>
+Berikut beberapa tipe commit yang dapat dijadikan referensi untuk penulisan pesan commit :
+
+- **refactor** : mengubah codingan tanpa memperbaiki suatu bug ataupun tidak terdapat perubahan secara fungsi dari code tersebut.
+- **update** : membuat suatu perubahan atau menambahkan suatu fitur dari apa yang telah ada. 
+- **fix** : memperbaiki suatu bug pada code tersebut
+- **revert** : kembali pada commit sebelumnya karena dirasa bahwa kinerja code lebih efektif sebelum commit yang sekarang
