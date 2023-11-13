@@ -208,3 +208,26 @@ Berikut beberapa tipe commit yang dapat dijadikan referensi untuk penulisan pesa
 - **update** : membuat suatu perubahan atau menambahkan suatu fitur dari apa yang telah ada. 
 - **fix** : memperbaiki suatu bug pada code tersebut
 - **revert** : kembali pada commit sebelumnya karena dirasa bahwa kinerja code lebih efektif sebelum commit yang sekarang
+
+<br><br>
+
+## Mengenal perbedaan merge, rebase, dan squash commit
+Dalam penggabungan suatu branch dengan branch lainnya, kita memiliki 3 opsi penggabungan yaitu merge, rebase, dan squash commit. Berikut akan kita bahas pengertian serta perbedaan dari ketiga metode tersebut :
+
+<br>
+
+### 1. Merge
+<img src="img/merge.png" alt="image" width=50%/> <br>
+Git merge merupakan penggabungan antara 1 cabang dengan cabang yang lain yang mana hal ini membuat suatu commit gabungan antara 2 cabang tersebut. Jadi history dari commit akan kurang rapi dan lebih sulit untuk di debug apabila terjadi kesalahan.
+
+<br>
+
+### 2. Rebase
+<img src="img/rebase.png" alt="image" width=50%/> <br>
+Git Rebase digunakan untuk menyusun ulang history commit. Jadi commit pada cabang yang akan kita merge akan di terapkan pada ujung cabang branch tujuan merge yang menghasilkan history yang lebih linear.
+
+<br>
+
+### 3. Squash commit
+<img src="img/squash.png" alt="image" width=50%/> <br>
+Squash commit merupakan penggabungan beberapa commit menjadi 1 commit tunggal. Ini membantu dalam menjadi kerapihan history commit. Squash commit biasanya di padukan dengan metode rebase agar history pada branch tujuan tidak terlalu banyak, namun tetap tertata dengan rapi.
